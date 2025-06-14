@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net9.0": {}
+    "net9.0": {
+      "GbgGoodDeeds.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "compile": {
+          "bin/placeholder/GbgGoodDeeds.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GbgGoodDeeds.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "GbgGoodDeeds.Domain/1.0.0": {
+      "type": "project",
+      "path": "../GbgGoodDeeds.Domain/GbgGoodDeeds.Domain.csproj",
+      "msbuildProject": "../GbgGoodDeeds.Domain/GbgGoodDeeds.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net9.0": []
+    "net9.0": [
+      "GbgGoodDeeds.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\97noraja\\.nuget\\packages\\": {},
@@ -38,7 +57,11 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\97noraja\\GbgGoodDeeds\\GbgGoodDeeds.Domain\\GbgGoodDeeds.Domain.csproj": {
+              "projectPath": "C:\\Users\\97noraja\\GbgGoodDeeds\\GbgGoodDeeds.Domain\\GbgGoodDeeds.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

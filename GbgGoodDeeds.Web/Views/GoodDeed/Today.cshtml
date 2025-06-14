@@ -1,0 +1,25 @@
+@model GbgGoodDeeds.Domain.Models.GoodDeed
+
+@{
+    ViewData["Title"] = "Dagens Goda Gärning";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@if (Model == null)
+{
+    <p>Inga gärningar tillgängliga. Lägg till en i databasen.</p>
+}
+else
+{
+    <div class="card p-4 shadow">
+        <h4>@Model.Title</h4>
+        <p>@Model.Description</p>
+
+        @if (!string.IsNullOrEmpty(Model.Neighborhood))
+        {
+            <p><strong>Område:</strong> @Model.Neighborhood</p>
+        }
+        <p><em>Skapad: @Model.CreatedAt.ToShortDateString()</em></p>
+    </div>
+}

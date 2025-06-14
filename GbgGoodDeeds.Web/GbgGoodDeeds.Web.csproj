@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GbgGoodDeeds.Application\GbgGoodDeeds.Application.csproj" />
+    <ProjectReference Include="..\GbgGoodDeeds.Infrastructure\GbgGoodDeeds.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>

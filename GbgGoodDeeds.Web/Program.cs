@@ -1,8 +1,20 @@
+
+using GbgGoodDeeds.Application.Interfaces;
+using GbgGoodDeeds.Infrastructure.Repositories;
+using GbgGoodDeeds.Infrastructure.Configurations;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.Configure<MongoDbOptions>(
+    builder.Configuration.GetSection(MongoDbOptions.SectionName));
 
+builder.Services.Configure<MongoDbOptions>(
+    builder.Configuration.GetSection(MongoDbOptions.SectionName));
+
+// Lägg till repository
+builder.Services.AddScoped<IGoodDeedRepository, MongoGoodDeedRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
