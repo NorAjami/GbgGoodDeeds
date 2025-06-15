@@ -1,0 +1,39 @@
+@model IEnumerable<GbgGoodDeeds.Domain.Models.GoodDeed>
+
+@{
+    ViewData["Title"] = "Historik över goda gärningar";
+}
+
+<h2 class="mb-4 text-primary">📜 Historik över goda gärningar i Göteborg</h2>
+
+@if (!Model.Any())
+{
+    <p>Här är det tomt...  Vill du bli den som startar godhetsvågen i Göteborg? 💫</p>
+
+}
+else
+{
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        @foreach (var deed in Model)
+        {
+            <div class="col">
+                <div class="card p-3 shadow-sm">
+                    <h5>@deed.Title</h5>
+                    <p>@deed.Description</p>
+
+                    @if (!string.IsNullOrEmpty(deed.Neighborhood))
+                    {
+                        <p><span class="badge bg-info">@deed.Neighborhood</span></p>
+                    }
+
+                    <p class="text-muted small">📅 @deed.CreatedAt.ToShortDateString()</p>
+
+                    @if (deed.IsCompleted)
+                    {
+                        <span class="badge bg-success">Utförd ✅</span>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+}

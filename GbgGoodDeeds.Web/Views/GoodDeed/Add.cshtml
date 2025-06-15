@@ -1,0 +1,33 @@
+@model GbgGoodDeeds.Web.ViewModels.AddGoodDeedViewModel
+
+@{
+    ViewData["Title"] = "Lägg till god gärning";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Add" method="post">
+    <div class="form-group mb-3">
+        <label asp-for="Title" class="form-label"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Description" class="form-label"></label>
+        <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Neighborhood" class="form-label"></label>
+        <input asp-for="Neighborhood" class="form-control" />
+    </div>
+
+   <button type="submit" class="btn btn-success">💚 Lägg till gärning – sprid värme i stan</button>
+
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

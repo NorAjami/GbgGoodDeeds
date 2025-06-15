@@ -29,6 +29,13 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-controller="GoodDeed" asp-action="Today">Dagens gärning</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-controller="GoodDeed" asp-action="Add">Lägg till en gärning</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-controller="GoodDeed" asp-action="History">📜 Historik</a>
+                        </li>
+
 
                     </ul>
                 </div>
@@ -39,6 +46,10 @@
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
+        <main class="container py-4">
+            @RenderBody()
+        </main>
+
     </div>
 
     <footer class="border-top footer text-muted">
